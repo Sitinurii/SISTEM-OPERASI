@@ -1,0 +1,14 @@
+# beberapa perintah terminal linux 
+
+sudo apt install openssh-server 
+sudo systemctl enable ssh
+sudo systemctl start ssh    
+
+
+#ini beberapa perintah untuk menginstal dan mengaktifkan ssh
+ssh nama_user@ip_user
+
+# ini untuk masuk ke pc a ke pc b
+sudo ufw enable #untuk mengaktifkan firewall
+sudo ufw allow 22 #untuk aktifkan ssh
+sufo ufw status # untuk mengecek status 
