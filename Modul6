@@ -1,0 +1,47 @@
+#Dasar Instalasi dan Manajemen Sistem
+sudo apt update
+sudo apt install python3
+python3 --version
+sudo apt install python3-pip
+pip --version
+
+
+
+#Virtual Environment (Python)
+mkdir virtualenv
+cd virtualenv
+python3 -m venv env
+source env/bin/activate
+pip install numpy matplotlib
+nano grafik.py
+python grafik.py
+deactivate
+
+
+
+#Instalasi & Penggunaan Docker
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
+sudo apt install docker-ce
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo systemctl status docker
+sudo usermod -aG docker ${USER}
+
+
+
+#Docker Project
+mkdir nama_direktori
+cd nama_direktori
+nano app.py               # Membuat file Python
+nano Dockerfile           # Membuat Dockerfile
+nano requirements.txt     # Menyusun dependencies
+docker build -t nama_image .
+
+
+#Jalankan Container dengan Akses GUI
+echo $DISPLAY             # Mengecek apakah X11 aktif
+docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix grafik
